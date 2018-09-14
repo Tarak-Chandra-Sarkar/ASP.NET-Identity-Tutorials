@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AspNetIdentityTutorial.Models
 {
@@ -15,6 +13,11 @@ namespace AspNetIdentityTutorial.Models
             : base("AspNetIdentityTutorial", throwIfV1Schema: false)
         {
 
+        }
+
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
         }
     }
 }

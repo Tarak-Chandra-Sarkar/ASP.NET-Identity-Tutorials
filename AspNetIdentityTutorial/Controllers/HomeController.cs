@@ -11,6 +11,12 @@ namespace AspNetIdentityTutorial.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            if (!Request.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            ViewBag.AuthMessage = "Welcome, you are Authenticated!";
             return View();
         }
     }
